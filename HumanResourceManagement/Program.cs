@@ -17,10 +17,10 @@ namespace HumanResourceManagement
             do
             {
                 Console.WriteLine("-------------------------Human Resource Management---------------------------");
-                Console.WriteLine("Etmek istediyiniz emeliyyatin qarsisindaki nomreni daxil edin:");
-                Console.WriteLine(" 1.1 - Departameantlerin siyahisini gostermek");
-                Console.WriteLine(" 1.2 - Departamenet yaratmaq");
-                Console.WriteLine(" 1.3 - Departmanetde deyisiklik etmek ");
+                Console.WriteLine("Etmek Isdediyniz Emeliyyatin Qarsisindaki Nomreni Daxil Edin:");
+                Console.WriteLine(" 1.1 - Departamentlerin siyahisini gostermek");
+                Console.WriteLine(" 1.2 - Departament yaratmaq");
+                Console.WriteLine(" 1.3 - Departamentde deyisiklik etmek ");
                 Console.WriteLine(" 2.1 - Iscilerin siyahisini gostermek ");
                 Console.WriteLine(" 2.2 - Departamentdeki iscilerin siyahisini gostermrek");
                 Console.WriteLine(" 2.3 - Isci elave etmek");
@@ -63,7 +63,7 @@ namespace HumanResourceManagement
 
                     default:
                         Console.Clear();
-                        Console.WriteLine("Duzgun daxil et");
+                        Console.WriteLine("Duzgun daxil et!");
                         break;
                 }
             } while (true);
@@ -77,35 +77,35 @@ namespace HumanResourceManagement
                     {
                         Console.WriteLine($"{item} - Ad: {item.Name}\n");
                         Console.WriteLine($"{item} - Isci Sayi: {item.Employees.Length}\n");
-                        Console.WriteLine($"{item} - Maas ortalamasi: {item.CalcSalaryAverage()}\n");
+                        Console.WriteLine($"{item} - Maas Ortalamasi: {item.CalcSalaryAverage()}\n");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Sistemde Department Movcud deyil\n");
+                    Console.WriteLine("Departament Movcud Deyil!\n");
                 }
             }
 
             static void AddDepartment(ref HumanResourceManager humanResourceManager)
             {
 
-                Console.WriteLine("Departmentin adini daxil et");
+                Console.WriteLine("Departamentin Adini Daxil Et:");
                 string name = Console.ReadLine();
-                Console.WriteLine("Worker Limiti daxil et");
+                Console.WriteLine("Isci Limitini Daxil Et:");
                 string WorkerLimit = Console.ReadLine();
                 int WorkerLimitNum;
                 while (!int.TryParse(WorkerLimit, out WorkerLimitNum) || WorkerLimitNum < 1)
                 {
-                    Console.WriteLine("Duzgun daxil et");
+                    Console.WriteLine("Duzgun Daxil Et!");
                     WorkerLimit = Console.ReadLine();
                 }
 
-                Console.WriteLine("SalaryLimiti daxil et");
+                Console.WriteLine("Maas Limitini Daxil Et:");
                 string salaryLimit = Console.ReadLine();
                 double salaryLimitNum;
                 while (!double.TryParse(salaryLimit, out salaryLimitNum) || salaryLimitNum < 250)
                 {
-                    Console.WriteLine("Duzgun daxil et");
+                    Console.WriteLine("Duzgun Daxil Et:");
                     salaryLimit = Console.ReadLine();
                 }
                 Employee[] array = new Employee[] { };
@@ -114,7 +114,7 @@ namespace HumanResourceManagement
 
             static void EditDepartment(ref HumanResourceManager humanResourceManager)
             {
-                Console.WriteLine("Deyisiklik edilecek departamentin adini daxil et");
+                Console.WriteLine("Deyisiklik Edilecek Departamentin Adini Daxil Et:");
                 string name = Console.ReadLine();
 
                 bool departmentFound = false;
@@ -123,12 +123,16 @@ namespace HumanResourceManagement
                     if (item.Name == name)
                     {
                         departmentFound = true;
-                        Console.WriteLine("Deyisiklik edilecek departamentin yeni adini daxil et");
+                        Console.WriteLine("Deyisiklik Edilecek Departamentin Yeni Adini Daxil Et:");
                         string newName = Console.ReadLine();
                         humanResourceManager.EditDepartaments(name, newName);
                     }
                 }
-
+                if (!departmentFound)
+                {
+                    Console.WriteLine("Daxil Edilen Departament Duzgun Deyil!");
+                    return;
+                }
             }
         }
     }
