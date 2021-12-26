@@ -42,11 +42,11 @@ namespace HumanResourceManagement.Models
             SalaryLimit = salaryLimit;
         }
 
-        public double CalcSalaryAverage(Department department)
+        public double CalcSalaryAverage()
         {
             int count = 0;
             double SalarySum = 0;
-            foreach (Employee item in department.Employees)
+            foreach (Employee item in Employees)
             {
                 SalarySum += item.Salary;
                 count++;

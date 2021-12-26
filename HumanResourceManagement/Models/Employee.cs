@@ -16,9 +16,11 @@ namespace HumanResourceManagement.Models
         public Employee(string fullname, string position, double salary, string departmentName) /*user terefinden daxil olunanlar*/
         {
             Count++;
+            Fullname = fullname;
+            
             No += departmentName.Substring(0, 2) + Count;
             DepartmentName = departmentName;
-            Fullname = fullname;
+
             if (position.Length<2 )
             {
                 Console.WriteLine("Department Name must be at least two letters!");
@@ -33,9 +35,9 @@ namespace HumanResourceManagement.Models
             Salary = salary;
             
         }
-        //public override string ToString()
-        //{
-        //    return $"Nomresi: {No}\nName: {Fullname}\nVezife: {Position}\nMaas: {Salary}\nDepartament: {DepartmentName}";
-        //}
+        public override string ToString()
+        {
+            return $"Nomresi: {No}\nName: {Fullname}\nVezife: {Position}\nMaas: {Salary}\nDepartament: {DepartmentName}";
+        }
     }
 }
