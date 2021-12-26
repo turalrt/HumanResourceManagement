@@ -11,6 +11,11 @@ namespace HumanResourceManagement.Services
         public Department[] Departments => _departments;
         private Department[] _departments;
 
+        public HumanResourceManager()
+        {
+            _departments = new Department[0];
+        }
+
         public void AddDepartment(Employee[] employees, string name, int workerLimit, double salaryLimit)
         {
             Department department = new Department(employees, name, workerLimit, salaryLimit);

@@ -13,11 +13,11 @@ namespace HumanResourceManagement.Models
 
         public Department(Employee[] employees, string name, int workerLimit, double salaryLimit)
         {
-            if (employees.Length <= 0)
-            {
-                Console.WriteLine("Employees can not be empty!");
-                return;
-            }
+            //if (employees.Length <= 0)
+            //{
+            //    Console.WriteLine("Employees can not be empty!");
+            //    return;
+            //}
             Employees = employees;
             
             if (name.Length < 2)
@@ -50,6 +50,11 @@ namespace HumanResourceManagement.Models
             {
                 SalarySum += item.Salary;
                 count++;
+            }
+
+            if (count == 0 || SalarySum == 0)
+            {
+                return 0;
             }
             return SalarySum / count;
         }

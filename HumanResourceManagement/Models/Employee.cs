@@ -35,9 +35,9 @@ namespace HumanResourceManagement.Models
             Salary = salary;
             
         }
-        public override string ToString()
-        {
-            return $"Nomresi: {No}\nName: {Fullname}\nVezife: {Position}\nMaas: {Salary}\nDepartament: {DepartmentName}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"Nomresi: {No}\nName: {Fullname}\nVezife: {Position}\nMaas: {Salary}\nDepartament: {DepartmentName}";
+        //}
     }
 }
