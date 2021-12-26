@@ -1,0 +1,14 @@
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\bin\Debug\netcoreapp3.1\HumanResourceManagement.exe
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\bin\Debug\netcoreapp3.1\HumanResourceManagement.deps.json
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\bin\Debug\netcoreapp3.1\HumanResourceManagement.runtimeconfig.json
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\bin\Debug\netcoreapp3.1\HumanResourceManagement.runtimeconfig.dev.json
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\bin\Debug\netcoreapp3.1\HumanResourceManagement.dll
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\bin\Debug\netcoreapp3.1\HumanResourceManagement.pdb
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.csproj.AssemblyReference.cache
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.AssemblyInfoInputs.cache
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.AssemblyInfo.cs
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.csproj.CoreCompileInputs.cache
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.dll
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.pdb
+C:\Users\OBPRemote9\source\repos\HumanResourceManagement\HumanResourceManagement\obj\Debug\netcoreapp3.1\HumanResourceManagement.genruntimeconfig.cache
