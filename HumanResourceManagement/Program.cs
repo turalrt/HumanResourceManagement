@@ -46,20 +46,24 @@ namespace HumanResourceManagement
                         break;
                     case 2.1:
                         Console.Clear();
+                        AllEmployeesList(ref humanResourceManager);
                         break;
                     case 2.2:
                         Console.Clear();
+                        DepEmployessList(ref humanResourceManager);
                         break;
                     case 2.3:
                         Console.Clear();
+                        AddEmployee(ref humanResourceManager);
                         break;
                     case 2.4:
                         Console.Clear();
+                        EditEmployee(ref humanResourceManager);
                         break;
                     case 2.5:
                         Console.Clear();
+                        RemoveEmployee(ref humanResourceManager);
                         break;
-
 
                     default:
                         Console.Clear();
@@ -134,6 +138,176 @@ namespace HumanResourceManagement
                     return;
                 }
             }
+
+            static void AllEmployeesList(ref HumanResourceManager humanResourceManager)
+            {
+                foreach (Department item in humanResourceManager.Departments)
+                {
+                    foreach (Employee employee in item.Employees)
+                    {
+                        Console.WriteLine($"{employee} - Nomre: {employee.No}\n");
+                        Console.WriteLine($"{employee} - Ad: {employee.Fullname}\n");
+                        Console.WriteLine($"{employee} - Departament Adi: {employee.DepartmentName}\n");
+                        Console.WriteLine($"{employee} - Maas: {employee.Salary}\n");
+                    }
+                }
+
+            }
+
+            static void DepEmployessList(ref HumanResourceManager humanResourceManager)
+            {
+                Console.WriteLine("Iscilerinin Infosunu Almaq Istediyiniz Departamentin Adini Daxil Et:");
+                string name = Console.ReadLine();
+                bool departmentFound = false;
+
+                if (name.Length < 2)
+                {
+                    Console.WriteLine("Department Name must be at least two letters!");
+                    return;
+                }
+
+                foreach (Department item in humanResourceManager.Departments)
+                {
+                    if (item.Name == name)
+                    {
+                        departmentFound = true;
+                        foreach (Employee employee in item.Employees)
+                        {
+                            Console.WriteLine($"{employee} - Nomre: {employee.No}\n");
+                            Console.WriteLine($"{employee} - Ad: {employee.Fullname}\n");
+                            Console.WriteLine($"{employee} - Vezife: {employee.Position}\n");
+                            Console.WriteLine($"{employee} - Maas: {employee.Salary}\n");
+                        }
+                    }
+                }
+                if (!departmentFound)
+                {
+                    Console.WriteLine("Daxil Edilen Departament Duzgun Deyil!");
+                    return;
+                }
+            }
+
+            static void AddEmployee(ref HumanResourceManager humanResourceManager)
+            {
+                Console.WriteLine("Departamentin Adini Daxil Et:");
+                string departmentName = Console.ReadLine();
+                while (departmentName.Length < 2)
+                {
+                    Console.WriteLine("Duzgun Daxil Et:");
+                    departmentName = Console.ReadLine();
+                }
+
+                Console.WriteLine("Iscinin Adini Daxil Et:");
+                string fullname = Console.ReadLine();
+                while (fullname.Length < 1)
+                {
+                    Console.WriteLine("Duzgun Daxil Et:");
+                    fullname = Console.ReadLine();
+                }
+
+                Console.WriteLine("Iscinin Vezifesini Daxil Et:");
+                string position = Console.ReadLine();
+                while (position.Length < 2)
+                {
+                    Console.WriteLine("Duzgun Daxil Et:");
+                    position = Console.ReadLine();
+                }
+
+                Console.WriteLine("Iscinin Maasini Daxil Et:");
+                string salary = Console.ReadLine();
+                double salaryNum;
+                while (!double.TryParse(salary, out salaryNum) || salaryNum < 250)
+                {
+                    Console.WriteLine("Duzgun Daxil Et:");
+                    salary = Console.ReadLine();
+                }
+
+                humanResourceManager.AddEmployee(fullname, position, salaryNum, departmentName);
+            }
+
+            static void EditEmployee (ref HumanResourceManager humanResourceManager)
+            {
+                Console.WriteLine("Deyisiklik Edilecek Iscinin Nomresini Daxil Et:");
+                string no = Console.ReadLine();
+                bool employeeFound = false;
+
+                foreach (Department item in humanResourceManager.Departments)
+                {
+                    foreach (Employee employee in item.Employees)
+                    {
+                        if (employee.No == no)
+                        {
+                            employeeFound = true;
+                            Console.WriteLine($"{employee} - Ad: {employee.Fullname}\n");
+                            Console.WriteLine($"{employee} - Vezife: {employee.Position}\n");
+                            Console.WriteLine($"{employee} - Maas: {employee.Salary}\n");
+
+                            Console.WriteLine("Iscinin Yeni Vezifesini Daxil Et:");
+                            string position = Console.ReadLine();
+                            while (position.Length < 2)
+                            {
+                                Console.WriteLine("Duzgun Daxil Et:");
+                                position = Console.ReadLine();
+                            }
+
+                            Console.WriteLine("Iscinin Yeni Maasini Daxil Et:");
+                            string salary = Console.ReadLine();
+                            double salaryNum;
+                            while (!double.TryParse(salary, out salaryNum) || salaryNum < 250)
+                            {
+                                Console.WriteLine("Duzgun Daxil Et:");
+                                salary = Console.ReadLine();
+                            }
+
+                            humanResourceManager.EditEmployee(employee.No, employee.Fullname, position, salaryNum, employee.DepartmentName);
+                        }
+                    }
+
+                }
+                if (!employeeFound)
+                {
+                    Console.WriteLine("Daxil Edilen Isci Nomresi Duzgun Deyil!");
+                    return;
+                }
+
+            }
+
+            static void RemoveEmployee (ref HumanResourceManager humanResourceManager)
+            {
+                Console.WriteLine("Silinecek Iscinin Departamentini Daxil Et:");
+                string departmentName = Console.ReadLine();
+                bool departmentFound = false;
+                bool employeeFound = false;
+                foreach (Department item in humanResourceManager.Departments)
+                {
+                    if (item.Name == departmentName)
+                    {
+                        Console.WriteLine("Silinecek Iscinin Nomresini Daxil Et:");
+                        string no = Console.ReadLine();
+                        foreach (Employee employee in item.Employees)
+                        {
+                            if (employee.No == no)
+                            {
+                                humanResourceManager.RemoveEmployee(no, departmentName);
+                            }
+                        }
+                    }
+
+                }
+
+                if (!departmentFound)
+                {
+                    Console.WriteLine("Daxil Edilen Departament Duzgun Deyil!");
+                    return;
+                }
+
+                if (!employeeFound)
+                {
+                    Console.WriteLine("Daxil Edilen Isci Nomresi Duzgun Deyil!");
+                    return;
+                }
+            }
+
         }
     }
 }

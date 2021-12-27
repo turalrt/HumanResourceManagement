@@ -23,7 +23,7 @@ namespace HumanResourceManagement.Models
 
             if (position.Length<2 )
             {
-                Console.WriteLine("Department Name must be at least two letters!");
+                Console.WriteLine("Position must be at least two letters!");
                 return;
             }
             Position = position;
