@@ -11,9 +11,9 @@ namespace HumanResourceManagement.Models
         public double SalaryLimit { get; set; }
         public Employee[] Employees { get; set; }
 
-        public Department(Employee[] employees, string name, int workerLimit, double salaryLimit)
+        public Department(/*Employee[] employees,*/ string name, int workerLimit, double salaryLimit)
         {
-            Employees = employees;
+            //Employees = employees;
             
             if (name.Length < 2)
             {

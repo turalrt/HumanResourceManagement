@@ -8,7 +8,7 @@ namespace HumanResourceManagement.Interfaces
     interface IHumanResourceManager
     {
         Department[] Departments { get; }
-        void AddDepartment(Employee[] employees, string name, int workerLimit, double salaryLimit);
+        void AddDepartment(/*Employee[] employees,*/ string name, int workerLimit, double salaryLimit);
         Department[] GetDepartments();
         void EditDepartaments(string name, string newName);
 

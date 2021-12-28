@@ -16,9 +16,9 @@ namespace HumanResourceManagement.Services
             _departments = new Department[0];
         }
 
-        public void AddDepartment(Employee[] employees, string name, int workerLimit, double salaryLimit)
+        public void AddDepartment(/*Employee[] employees,*/ string name, int workerLimit, double salaryLimit)
         {
-            Department department = new Department(employees, name, workerLimit, salaryLimit);
+            Department department = new Department(/*employees,*/ name, workerLimit, salaryLimit);
             Array.Resize(ref _departments, _departments.Length + 1);
             _departments[_departments.Length - 1] = department;
         }

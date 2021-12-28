@@ -112,8 +112,8 @@ namespace HumanResourceManagement
                     Console.WriteLine("Duzgun Daxil Et:");
                     salaryLimit = Console.ReadLine();
                 }
-                Employee[] array = new Employee[] { };
-                humanResourceManager.AddDepartment(array, name, WorkerLimitNum, salaryLimitNum);
+                //Employee[] array = new Employee[] { };
+                humanResourceManager.AddDepartment(/*array,*/ name, WorkerLimitNum, salaryLimitNum);
             }
 
             static void EditDepartment(ref HumanResourceManager humanResourceManager)
