@@ -100,7 +100,7 @@ namespace HumanResourceManagement
                 int WorkerLimitNum;
                 while (!int.TryParse(WorkerLimit, out WorkerLimitNum) || WorkerLimitNum < 1)
                 {
-                    Console.WriteLine("Duzgun Daxil Et!");
+                    Console.WriteLine("Duzgun Daxil Et:");
                     WorkerLimit = Console.ReadLine();
                 }
 
