@@ -13,30 +13,25 @@ namespace HumanResourceManagement.Models
 
         public Department(Employee[] employees, string name, int workerLimit, double salaryLimit)
         {
-            //if (employees.Length <= 0)
-            //{
-            //    Console.WriteLine("Employees can not be empty!");
-            //    return;
-            //}
             Employees = employees;
             
             if (name.Length < 2)
             {
-                Console.WriteLine("Department Name must be at least two letters!");
+                Console.WriteLine("Departament Adi En Az Iki Herf Olmalidir!");
                 return;
             }
             Name = name;
 
             if (workerLimit < 1)
             {
-                Console.WriteLine("Worker limit must be more than 0!");
+                Console.WriteLine("Isci Limiti En Az 1 Olmalidir!");
                 return;
             }
             WorkerLimit = workerLimit;
 
             if (salaryLimit < 250)
             {
-                Console.WriteLine("Salary cannot be less than 250!");
+                Console.WriteLine("Maas Limiti 250-den Asagi Ola Bilmez!");
                 return;
             }
             SalaryLimit = salaryLimit;

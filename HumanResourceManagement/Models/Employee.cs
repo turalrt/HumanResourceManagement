@@ -23,13 +23,13 @@ namespace HumanResourceManagement.Models
 
             if (position.Length<2 )
             {
-                Console.WriteLine("Position must be at least two letters!");
+                Console.WriteLine("Iscinin Vezifesi En Az Iki Herf Olmalidir!");
                 return;
             }
             Position = position;
             if (salary <250)
             {
-                Console.WriteLine("Salary cannot be less than 250!");
+                Console.WriteLine("Maas 250-den Asagi Ola Bilmez!");
                 return;
             }
             Salary = salary;
