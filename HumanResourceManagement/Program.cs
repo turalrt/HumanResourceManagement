@@ -162,7 +162,7 @@ namespace HumanResourceManagement
 
                 if (name.Length < 2)
                 {
-                    Console.WriteLine("Department Name must be at least two letters!");
+                    Console.WriteLine("Duzgun Daxil Et:");
                     return;
                 }
 
