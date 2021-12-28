@@ -16,16 +16,16 @@ namespace HumanResourceManagement
             HumanResourceManager humanResourceManager = new HumanResourceManager();
             do
             {
-                Console.WriteLine("-------------------------Human Resource Management---------------------------");
+                Console.WriteLine("********************Human Resource Management********************");
                 Console.WriteLine("Etmek Isdediyniz Emeliyyatin Qarsisindaki Nomreni Daxil Edin:");
-                Console.WriteLine(" 1.1 - Departamentlerin siyahisini gostermek");
-                Console.WriteLine(" 1.2 - Departament yaratmaq");
-                Console.WriteLine(" 1.3 - Departamentde deyisiklik etmek ");
-                Console.WriteLine(" 2.1 - Iscilerin siyahisini gostermek ");
-                Console.WriteLine(" 2.2 - Departamentdeki iscilerin siyahisini gostermrek");
-                Console.WriteLine(" 2.3 - Isci elave etmek");
-                Console.WriteLine(" 2.4 - Isci uzerinde deyisiklik etmek");
-                Console.WriteLine(" 2.5 - Departamentden isci silinmesi");
+                Console.WriteLine("1.1 - Departamentlerin siyahisini gostermek");
+                Console.WriteLine("1.2 - Departament yaratmaq");
+                Console.WriteLine("1.3 - Departamentde deyisiklik etmek ");
+                Console.WriteLine("2.1 - Iscilerin siyahisini gostermek ");
+                Console.WriteLine("2.2 - Departamentdeki iscilerin siyahisini gostermrek");
+                Console.WriteLine("2.3 - Isci elave etmek");
+                Console.WriteLine("2.4 - Isci uzerinde deyisiklik etmek");
+                Console.WriteLine("2.5 - Departamentden isci silinmesi");
 
                 string choose = Console.ReadLine();
                 double chooseNum;
